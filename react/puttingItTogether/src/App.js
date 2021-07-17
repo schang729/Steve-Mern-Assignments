@@ -1,9 +1,6 @@
 
 import './App.css';
 import PersonCard from './components/PersonCard';
-import React, { userState } from 'react';
-
-
 
 function App() {
   return (
@@ -11,23 +8,22 @@ function App() {
       <PersonCard 
         firstName={"Jane"}
         lastName={"Doe"}
-        age={45}
+        age={"45"}
         hairColor={"Black"}/>
-        
         <PersonCard 
         firstName={"John"}
         lastName={"Smith"}
-        age={88}
+        age={"88"}
         hairColor={"Brown"}/>
         <PersonCard 
         firstName={"Millard"}
         lastName={"Fillmore"}
-        age={50}
+        age={"50"}
         hairColor={"Brown"}/>
         <PersonCard 
         firstName={"Maria"}
         lastName={"Smith"}
-        age={62}
+        age={"62"}
         hairColor={"Brown"}/>
   
     </div>
