@@ -7,7 +7,7 @@ const Hookform = (props) => {
     const [password, setPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
 
-    const createUser = (e) => {
+    const createUser = (e) => { //handle//
         e.preventDefault();
 
         const newUser = {firstname, lastname, email, password, confirmpassword};
