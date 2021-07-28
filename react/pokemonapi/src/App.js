@@ -5,8 +5,9 @@ import './App.css';
 function App() {
   const [pokemon, setPokemon] = useState([]);
   useEffect(() => {
-      axios.get('https://pokeapi.co/api/v2/pokemon/?limit=808&offset=808')
+      axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
           .then(response=>{setPokemon(response.data.results)})
+          .catch((err)=> {console.log(err);})
           
 
   }, []);
