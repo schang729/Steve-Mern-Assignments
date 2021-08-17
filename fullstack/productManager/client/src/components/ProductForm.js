@@ -35,11 +35,13 @@ const ProductForm = (props) => {
 
     return (  
         <>
+       
             <h1>Product Form</h1>
             <form onSubmit={ createProduct}>
-                <div>
+                <div >
                     <label>Title: </label>
                     <input
+                        
                         type="text"
                         name="title"
                         id="title"
@@ -76,12 +78,15 @@ const ProductForm = (props) => {
                     {errors.description ? <p>{errors.description.message}</p> : null}
 
                 </div>
-                <button>Submit</button>
+                
+                <button className="btn btn-primary">Submit</button>
 
 
 
                 
             </form>
+            
+            
             {/* {errors ? Object.keys(errors).map((objKey, index) => (
             <p key={index}>{errors[objKey].message}</p>
           )) : null} */}

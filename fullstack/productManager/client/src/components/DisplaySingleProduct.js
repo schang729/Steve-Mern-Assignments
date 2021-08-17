@@ -10,7 +10,7 @@ const DisplaySingleProduct = (props) => {
         console.log("gotProduct")
         axios.get(`http://localhost:8000/api/product/${productId}`)
             .then(singleProducts=>setProductInfo(singleProducts.data.product))
-            .catch((err)=> {console.log(err);})
+            .catch((err)=> console.log(err))
             
   
     }, []);

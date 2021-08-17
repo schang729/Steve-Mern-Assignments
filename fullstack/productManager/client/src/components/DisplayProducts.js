@@ -2,6 +2,7 @@ import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { Link } from "@reach/router";
 
+
 const DisplayProducts = (props) => {
     const [products, setProducts] = useState([]);
     const { formSubmitted, setFormSubmitted } = props;
@@ -10,7 +11,7 @@ const DisplayProducts = (props) => {
         console.log("triggered ")
         axios.get("http://localhost:8000/api/product/")
             .then(allProducts=>setProducts(allProducts.data.allProducts))
-            .catch((err)=> {console.log(err);})
+            .catch((err)=> console.log(err));
             
   
     }, [formSubmitted]);
@@ -38,7 +39,7 @@ const DisplayProducts = (props) => {
                     <p>{product.price}</p>
                     <p>{product.description}</p>
                     {/* <img src = {product.photoUrl}/> */}
-                    <button onClick={() => deleteProduct(product._id)}>Delete</button>
+                    <button className="btn btn-danger" onClick={() => deleteProduct(product._id)}>Delete</button>
                     <hr></hr>
 
 
