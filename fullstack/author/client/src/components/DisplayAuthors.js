@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { Link } from "@reach/router";
+import Popup from "./Popup";
 
 
 
 const DisplayAuthors = (props) => {
     const [authors, setAuthors] = useState([]);
     const { formSubmitted, setFormSubmitted } = props;
+    const [buttonPopup, setButtonPopup] = useState(false)
 
     useEffect(() => {
         console.log("triggered ")
@@ -27,6 +29,9 @@ const DisplayAuthors = (props) => {
 
         .catch((err)=> console.log("error while deleteing", err))
 
+    }
+    const popupSetter = () =>{
+        setButtonPopup(true)
     }
 
 
@@ -58,22 +63,23 @@ const DisplayAuthors = (props) => {
                 <td>
 
                     <button className="btn btn-dark"><Link to={`/${author._id}/edit`}>Edit</Link></button>
-                    <button className="btn btn-danger" onClick={() => deleteAuthor(author._id)}>Delete</button>
+                    <button className="btn btn-danger" onClick={() =>{ 
+                        deleteAuthor(author._id);
+                        popupSetter();
+                    }}>Delete</button>
                 </td>
               
  
             </tr>
          
-            
-        
-        
-            
-            
-            
-            
+
         ))}
         </tbody>
         </table>
+        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <h2>Author Deleted</h2>
+
+        </Popup>
 
 
 
